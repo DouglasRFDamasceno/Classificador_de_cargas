@@ -26,7 +26,7 @@
                     </div>
 
                     <!-- Basic Card Example -->
-                    <div class="card shadow  mb-4 border-left-dark">
+                    <div class="card shadow  mb-4 border-left-primary">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Cadastro</h6>
                         </div>
@@ -56,7 +56,15 @@
                                 </div>
         
                                 <div>
-                                    <button class="btn btn-success btn-circle btn-lg btn-position-rigth" type="submit"><i class="fas fa-check"></i></button>
+                                    <button id="buttonOk" class="btn btn-success btn-circle btn-lg btn-position-rigth" type="submit"><i class="fas fa-check"></i></button>
+                                    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+                                    <script src="{% static 'vendor/sweetalert2.all.min.js' %}"></script>
+                                    <script>
+                                        $( "buttonOk" ).click(function() {
+                                            print('OI');
+                                            swal("Hello world!"); 
+                                        });
+                                    </script>
                                 </div>
         
                             </form>

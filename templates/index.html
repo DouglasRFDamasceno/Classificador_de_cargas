@@ -26,6 +26,26 @@
                     </div>
 
                     <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Classificador de cargas industriais</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        Bem-vindo!.
+                                    </p>
+                                    <p>
+                                        Este sistema tem por objetivo mostrar
+                                        o consumo energético atual de cada carga industrial conectada ao sistema, juntamnete
+                                        com seu estado atual (ON/OFF).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <!-- Earnings (Annual) Card Example -->
                         <div class="col-xl-3 col-lg-4">
                             <div class="card border-left-success shadow h-100 py-2">
@@ -51,82 +71,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-9 col-lg-5">
-                            <div class="card border-left-secondary shadow py-2">
-                                <div class="card-body">
-                                    <canvas id="myChart1" width="730" height="380"></canvas>
-                                    <script src="{% static 'vendor/echarts.js' %}"></script>
-                                    <script type="text/javascript">
-                                        // Based on the prepared dom, initialize the echarts instance
-                                        var chartDom = document.getElementById('myChart1');
-                                        var myChart = echarts.init(chartDom);
-                                        var option;
-
-                                        option = {
-                                            title: {
-                                                text: 'Montagem estrutural',
-                                                padding: [5, 230],
-                                                textStyle: {
-                                                    fontSize: 25,
-                                                    color: '#5a5c69'
-                                                },
-                                            },
-                                            xAxis: {
-                                                type: 'category',
-                                                name: 'Máquinas',
-                                                nameLocation: 'end',
-                                                axisLabel: { interval: 0, rotate: 30 },
-                                                data: {{ labels|safe }}
-                                            },
-                                            yAxis: {
-                                                name: 'Consumo mês (R$)',
-                                                position: 'center',
-                                                nameLocation: 'center',
-                                                nameGap: 45,
-                                                type: 'value',
-                                                data: {{ data|safe }}
-                                            },
-                                            series: [{
-                                                data: {{ data|safe }},
-                                                type: 'bar',
-                                                label: {
-                                                    normal: {
-                                                        show: false,
-                                                        position: 'center'
-                                                    },
-                                                    emphasis: {
-                                                        show: true,
-                                                        textStyle: {
-                                                            fontSize: '30',
-                                                            fontWeight: 'bold'
-                                                        }
-                                                    }
-                                                },
-                                            }],
-                                        };
-
-                                        myChart.setOption(option);
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
-                    <!-- <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Classificador de cargas industriais</h6>
-                                </div>
-                                <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
                 <!-- /.container-fluid -->
