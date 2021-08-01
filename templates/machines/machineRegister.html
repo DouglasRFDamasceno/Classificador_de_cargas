@@ -1,0 +1,88 @@
+{% load static %}
+
+{% include 'partials/_head.html' %}
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {% include 'partials/_sidebar.html' %}
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                {% include 'partials/_topbar.html' %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Gerenciamento de Máquinas</h1>
+                    </div>
+
+                    <!-- Basic Card Example -->
+                    <div class="card shadow  mb-4 border-left-dark">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Cadastro</h6>
+                        </div>
+                        <div class="card-body">
+                            
+                            <form name="machineForm" action="{% url 'machineRegister' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row">
+        
+                                <div class="form-group col-md-6">
+                                    <label for="nameMachine">Nome</label>
+                                    <input type="text" class="form-control" id="nameMachine" placeholder="Digite o nome" name="name">
+                                </div>
+        
+                                <div class="form-group col-md-6">
+                                    <label for="nameMachine">Área</label>
+                                    <input type="text" class="form-control" id="areaMachine" placeholder="Digite a área" name="area">
+                                </div>
+                                
+                                </div>
+        
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nameMachine">Produção</label>
+                                        <input type="text" class="form-control" id="productionMachine" placeholder="Digite a produção por hora" name="production">
+                                    </div>
+                                </div>
+        
+                                <div>
+                                    <button class="btn btn-success btn-circle btn-lg btn-position-rigth" type="submit"><i class="fas fa-check"></i></button>
+                                </div>
+        
+                            </form>
+
+                        </div>
+                    </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+            {% include 'partials/_footer.html' %}
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% include 'partials/_logout.html' %}
+    {% include 'partials/_bootstrapCore.html' %}
+
+</body>
+
+</html>
