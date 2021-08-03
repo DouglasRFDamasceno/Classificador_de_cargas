@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="row">
-                        <!-- Earnings (Annual) Card Example -->
+
                         <div class="col-xl-3 col-lg-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -65,6 +65,31 @@
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4">
+                            <div class="card border-left-info shadow py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-4">
+                                                Estado das máquinas</div>
+                                            {% for machine in machines %}
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                {{ machine.name }} </div>
+                                            {%if machine.state %}
+                                                <div class="h5 mb-4 font-weight-bold text-gray-800">ON</div>
+                                            {% else %}
+                                                <div class="h5 mb-4 font-weight-bold text-gray-800">OFF</div>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-charging-station fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>

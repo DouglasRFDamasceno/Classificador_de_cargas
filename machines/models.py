@@ -5,5 +5,6 @@ class Machine(models.Model):
     area = models.CharField(max_length=200)
     production = models.IntegerField()
     consumption = models.CharField(max_length=200, default='0')
+    state = models.BooleanField(default=False)
     def __str__(self):
         return self.name
