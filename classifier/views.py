@@ -15,7 +15,6 @@ def index(request):
             data.append(machine.consumption)
             labels.append(machine.name)
 
-        print(labels)
         dados = {
             'machines': machinesDB,
             'consumptionTotal': consumptionTotal,

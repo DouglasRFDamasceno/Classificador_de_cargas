@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="card-body">
                                     <p>
-                                        Bem-vindo!.
+                                        Bem-vindo!
                                     </p>
                                     <p>
                                         Este sistema tem por objetivo mostrar
@@ -82,9 +82,9 @@
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 {{ machine.name }} </div>
                                             {%if machine.state %}
-                                                <div class="h5 mb-4 font-weight-bold text-gray-800">ON</div>
+                                                <div class="h5 mb-4 font-weight-bold text-success">ON</div>
                                             {% else %}
-                                                <div class="h5 mb-4 font-weight-bold text-gray-800">OFF</div>
+                                                <div class="h5 mb-4 font-weight-bold text-danger">OFF</div>
                                             {% endif %}
                                             {% endfor %}
                                         </div>
